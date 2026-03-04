@@ -1,0 +1,41 @@
+1. วิธีการ Clone ลงเครื่อง 
+ให้เพื่อนเปิด Git Bash หรือ Terminal ในโฟลเดอร์ C:\xampp\htdocs\ แล้วใช้คำสั่งนี้:
+
+Bash
+git clone https://github.com/suphathineeso/Cyber-Attack-Simulation.git
+ผลลัพธ์: จะได้โฟลเดอร์ชื่อ Cyber-Attack-Simulation มาอยู่ในเครื่อง
+
+!!! ข้อแนะนำ: หากเพื่อนต้องการให้เข้าเว็บผ่าน localhost/dvwa/ เหมือนเดิม ให้เพื่อนเปลี่ยนชื่อโฟลเดอร์จาก Cyber-Attack-Simulation เป็น dvwa 
+
+2. สิ่งที่ต้องทำหลังจาก Clone (Setup Guide)
+เนื่องจากเราไม่ได้อัปโหลดฐานข้อมูล (Database) ขึ้น Git จึงต้องทำ 3 ขั้นตอนนี้เพื่อให้ระบบใช้งานได้:
+A. สร้างฐานข้อมูลใหม่ (Database Setup)
+เปิด XAMPP Control Panel แล้วกด Start ที่ Apache และ MySQL
+เข้าไปที่เบราว์เซอร์แล้วพิมพ์: http://localhost/dvwa/setup.php (หรือตามชื่อโฟลเดอร์ที่เพื่อนตั้ง)
+
+http://localhost/dvwa/setup.php
+http://localhost/dvwa/login.php
+
+Username: admin
+Password: password
+
+กดปุ่ม "Create / Reset Database" ที่ด้านล่างสุด
+
+B. ตรวจสอบไฟล์ Config
+หากคุณอัปโหลดไฟล์ config/config.inc.php ขึ้นไปด้วย จะใช้งานได้ทันที
+
+แต่ถ้าเข้าไม่ได้: ให้ก๊อปปี้ไฟล์ config/config.inc.php.dist แล้วเปลี่ยนชื่อเป็น config.inc.php จากนั้นตรวจสอบว่า db_user คือ root และ db_password เป็นค่าว่าง '' 
+
+C. ตรวจสอบสิทธิ์การเขียนไฟล์ (Logs)
+ระบบ SOC ของเราต้องเขียนไฟล์ลงในโฟลเดอร์ dvwa/logs/
+
+สิ่งที่ต้องทำ: ให้เช็คว่าโฟลเดอร์ logs ไม่ได้ถูกตั้งค่าเป็น Read-only (โดยปกติใน Windows จะไม่มีปัญหา แต่ถ้าเป็น Linux ต้องรัน chmod 777 dvwa/logs)
+
+3. ตรวจสอบความพร้อม (Verification)
+ให้เพื่อนลองทดสอบตามลำดับนี้เพื่อดูว่าระบบทำงานสมบูรณ์ไหม:
+
+Login: เข้าด้วย admin / password
+
+Timeline: ไปที่หน้า Incident Timeline ควรจะเห็น Log เก่าที่คุณอัปโหลดขึ้นไปด้วย (เพราะเราไม่ได้ ignore ไฟล์ .jsonl)
+
+Simulate: ไปที่หน้า Simulation Lab แล้วลองกดปุ่ม Simulate ดูว่ามี Log ใหม่เพิ่มขึ้นในหน้า Timeline หรือไม่
