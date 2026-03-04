@@ -1,0 +1,696 @@
+/* Cyber Attack Simulation - main.css (Blue/White + Dark mode) */
+/* Minimal IT style + No Bootstrap dependency + Responsive hamburger */
+
+/* =========================
+   THEME TOKENS
+   ========================= */
+:root{
+  --bg:#ffffff;
+  --surface:#f5f8ff;
+  --text:#0b1220;
+  --muted:#5b6475;
+
+  --primary:#0b2a5b;
+  --border:#d8e2f0;
+
+  /* ลดความโค้งลงให้ดิบขึ้น */
+  --radius:6px;
+
+  --danger:#ef4444;
+  --success:#22c55e;
+
+  --header-bg:#0b1220;
+  --header-accent: var(--primary);
+
+  --shadow: 0 10px 30px rgba(11,18,32,.08);
+}
+
+body.dark{
+  --bg:#0b1220;
+  --surface:#121a2b;
+  --text:#eaf1ff;
+  --muted:#a9b4c7;
+
+  --primary:#447ad2;
+  --border:#26324a;
+
+  --danger:#ff6b6b;
+  --success:#4ade80;
+
+  --header-bg:#050a14;
+  --header-accent: var(--primary);
+
+  --shadow: 0 10px 30px rgba(0,0,0,.45);
+}
+
+/* =========================
+   BASE
+   ========================= */
+html,body{height:100%;margin:0;}
+body{
+  margin:0;
+  color:var(--text);
+  background:var(--bg);
+  font:13px/18px Arial, Helvetica, sans-serif;
+}
+
+/* Links */
+a{color:var(--primary);text-decoration:none;font-weight:700;}
+a:hover{text-decoration:underline;}
+a img{border:0;width:16px;}
+
+hr{border:0;height:1px;background:var(--border);}
+
+/* =========================
+   LAYOUT
+   ========================= */
+div#container{
+  width:100%;
+  min-height:100%;
+  background:var(--bg);
+  font-size:13px;
+}
+
+div#header{
+  position:relative;
+  padding:14px 16px;
+  overflow:hidden;
+  background:var(--header-bg);
+  border-bottom:4px solid var(--header-accent);
+  text-align:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.15);
+}
+
+div#system_info{
+  padding:10px 14px;
+  text-align:right;
+  color:var(--muted);
+  background:var(--bg);
+}
+
+div#main_body{
+  float:none;
+  width:100%;
+  background:var(--bg);
+  font-size:13px;
+  padding:34px 40px;
+}
+
+div#footer{
+  color:var(--muted);
+  background:var(--header-bg);
+  padding:24px 20px;
+  text-align:center;
+  border-top:4px solid var(--header-accent);
+  min-height:90px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Mobile padding */
+@media (max-width:768px){
+  div#main_body{ padding:16px !important; }
+}
+
+/* =========================
+   BOXES
+   ========================= */
+div.vulnerable_code_area,
+div.message,
+div#guestbook_comments,
+div#idslog{
+  background-color:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:14px 16px;
+  box-shadow:var(--shadow);
+}
+
+pre{color:var(--danger);}
+
+/* =========================
+   BUTTONS / INPUTS
+   ========================= */
+.popup_button{
+  border:1px solid var(--border);
+  padding:7px 10px;
+  background:var(--surface);
+  font-weight:700;
+  cursor:pointer;
+  color:var(--text);
+  border-radius:4px;            /* ลดโค้ง */
+}
+.popup_button:hover{
+  background:rgba(30,136,229,.14);
+  border-color:rgba(30,136,229,.35);
+}
+
+input[type="text"], input[type="password"], textarea, select{
+  border:1px solid var(--border);
+  background:var(--bg);
+  color:var(--text);
+  border-radius:4px;           /* ลดโค้ง */
+  padding:7px 10px;
+  outline:none;
+}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus{
+  border-color:rgba(30,136,229,.55);
+  box-shadow:0 0 0 3px rgba(30,136,229,.18);
+}
+
+/* Theme toggle icon area (top-right) */
+.theme-icon{
+  position:absolute;
+  right:10px;
+  top:10px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* =========================
+   IMPORTANT: REMOVE BOOTSTRAP NAV OVERRIDES
+   (คุณบอกไม่อยากพึ่ง bootstrap)
+   ========================= */
+/* ลบทิ้ง/ไม่ใช้
+.navbar-nav{...}
+.nav-link{...}
+*/
+
+/* =========================
+   CYBER NAVBAR (Minimal IT / No Bootstrap)
+   ใช้กับ HTML คลาส: cyber-topbar / cyber-nav / cyber-brand / cyber-links / cyber-right
+   และมี .cyber-hamburger สำหรับมือถือ
+   ========================= */
+
+.cyber-topbar{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: linear-gradient(180deg, rgba(9,14,25,.96), rgba(6,10,18,.92));
+  border-bottom: 1px solid rgba(96,165,250,.22);
+  box-shadow: 0 10px 24px rgba(0,0,0,.25);
+}
+
+.cyber-topbar::after{
+  content:"";
+  display:block;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(96,165,250,.0), rgba(96,165,250,.85), rgba(96,165,250,.0));
+  opacity: .55;
+}
+
+.cyber-nav{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Brand */
+.cyber-brand{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap: 2px;
+  min-width: 190px;
+}
+.cyber-brand .title{
+  color:#fff;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  line-height: 16px;
+}
+.cyber-brand .sub{
+  color: rgba(234,241,255,.65);
+  font-size: 11px;
+  letter-spacing: .2px;
+  line-height: 12px;
+}
+
+/* Links group: ด้านขวา (เท่กว่า) */
+.cyber-links{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* ทำเป็นตัวหนังสือล้วน (ไม่เป็นปุ่ม) */
+.cyber-link,
+.cyber-drop > button{
+  display:inline-block;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 6px 2px !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  color: rgba(234,241,255,.86);
+  font-weight: 800;
+  letter-spacing: .25px;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* hover แบบ IT: เส้นใต้ + สีสว่างขึ้น */
+.cyber-link:hover,
+.cyber-drop > button:hover{
+  color:#fff;
+  text-decoration:none;
+}
+.cyber-link::after,
+.cyber-drop > button::after{
+  content:"";
+  display:block;
+  height:2px;
+  width:0%;
+  background: rgba(96,165,250,.85);
+  transition: width .15s ease;
+  margin-top: 6px;
+}
+.cyber-link:hover::after,
+.cyber-drop > button:hover::after{
+  width: 100%;
+}
+
+/* Right side */
+.cyber-right{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  color: rgba(234,241,255,.86);
+  white-space: nowrap;
+}
+
+/* User badge: เหลี่ยมๆ โค้งน้อย */
+.cyber-pill{
+  border: 1px solid rgba(96,165,250,.22);
+  background: transparent;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-weight: 900;
+  letter-spacing: .2px;
+}
+
+/* Dropdown */
+.cyber-drop{ position: relative; }
+
+/* Panel: flat, dark, ไม่โค้งมาก */
+.cyber-menu{
+  display:none;
+  position:absolute;
+  right: 0;
+  top: 34px;
+  min-width: 260px;
+  background: rgba(5,10,20,.98);
+  border: 1px solid rgba(96,165,250,.22);
+  border-radius: 6px;
+  box-shadow: 0 18px 44px rgba(0,0,0,.38);
+  padding: 8px;
+  z-index: 1200;
+}
+
+.cyber-menu::before{ display:none; }
+
+.cyber-menu a{
+  display:block;
+  padding: 9px 10px;
+  border-radius: 4px;
+  color: rgba(234,241,255,.88);
+  font-weight: 800;
+  letter-spacing: .2px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.cyber-menu a:hover{
+  background: rgba(96,165,250,.14);
+  color:#fff;
+  text-decoration:none;
+}
+
+/* เปิด dropdown จาก JS เดิมของคุณ */
+.cyber-drop.open .cyber-menu{ display:block; }
+
+/* Hamburger button */
+.cyber-hamburger{
+  display:none;
+  background: transparent;
+  border: 1px solid rgba(96,165,250,.25);
+  color: rgba(234,241,255,.92);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.cyber-hamburger:hover{ color:#fff; }
+
+/* Mobile: ทำเมนูพับ/กาง */
+@media (max-width:900px){
+  .cyber-nav{
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .cyber-hamburger{
+    display:inline-flex;
+    margin-left: auto;
+  }
+
+  /* links collapse */
+  .cyber-links{
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease;
+    padding-top: 0;
+    border-top: 1px solid rgba(96,165,250,.14);
+    margin-top: 10px;
+  }
+
+  /* เวลาเปิดเมนู: ใส่ class nav-open ที่ body */
+  body.nav-open .cyber-links{
+    max-height: 420px;
+    padding-top: 10px;
+  }
+
+  /* dropdown panel เต็มจอ */
+  .cyber-menu{
+    right: 0;
+    left: 0;
+    min-width: unset;
+    top: 36px;
+  }
+
+  /* user อยู่บรรทัดบน */
+  .cyber-right{
+    margin-left: auto;
+  }
+}
+
+
+
+/* ===== Learning Panel (Cyber Attack Simulation) ===== */
+.cas-learn{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+}
+.cas-learn__top{display:flex;flex-direction:column;gap:6px;margin-bottom:10px;}
+.cas-learn__title{font-weight:900;letter-spacing:.25px;text-transform:uppercase;}
+.cas-learn__flow{color:var(--muted);font-size:12px;}
+.cas-learn__grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.cas-card{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px;}
+.cas-card__h{font-weight:900;letter-spacing:.2px;margin-bottom:8px;text-transform:uppercase;font-size:12px;}
+.cas-ul{margin:0;padding-left:18px;color:var(--text);}
+.cas-note{margin-top:8px;color:var(--muted);font-size:12px;}
+@media (max-width: 980px){ .cas-learn__grid{grid-template-columns:1fr;} }
+
+
+
+/* ===== Learning Panel (Cyber Attack Simulation) ===== */
+.cas-learn{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+}
+.cas-learn__top{display:flex;flex-direction:column;gap:6px;margin-bottom:10px;}
+.cas-learn__title{font-weight:900;letter-spacing:.25px;text-transform:uppercase;}
+.cas-learn__flow{color:var(--muted);font-size:12px;}
+.cas-learn__grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.cas-card{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px;}
+.cas-card__h{font-weight:900;letter-spacing:.2px;margin-bottom:8px;text-transform:uppercase;font-size:12px;}
+.cas-ul{margin:0;padding-left:18px;color:var(--text);}
+.cas-note{margin-top:8px;color:var(--muted);font-size:12px;}
+@media (max-width: 980px){ .cas-learn__grid{grid-template-columns:1fr;} }
+
+/* เว้น 1 บรรทัดระหว่างกล่องทดลอง กับ Learning Panel */
+.cas-learn{
+  margin-top: 14px;   /* ปรับได้: 12–20px ตามชอบ */
+}
+
+/* ===== Cyber Attack Simulation: Home page only ===== */
+.cas-home h1{ margin:0 0 8px; letter-spacing:.5px; }
+.cas-home h2{ margin:18px 0 10px; }
+
+.cas-hero{
+  display:flex;
+  gap:16px;
+  align-items:stretch;
+  padding:16px;
+  border:1px solid var(--border);
+  background:var(--surface);
+}
+
+.cas-hero__left{ flex:1.2; }
+.cas-hero__right{ flex:1; }
+
+.cas-lead{ margin:0 0 12px; color:var(--muted); max-width:70ch; }
+
+.cas-badges{ display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px; }
+.cas-badge{
+  border:1px solid var(--border);
+  padding:4px 8px;
+  background:var(--bg);
+  color:var(--text);
+  font-weight:800;
+  font-size:12px;
+}
+
+.cas-cta{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+.cas-btn{
+  display:inline-block;
+  border:1px solid rgba(30,136,229,.45);
+  background:rgba(30,136,229,.12);
+  padding:8px 12px;
+  font-weight:900;
+  color:var(--text);
+}
+.cas-btn:hover{ background:rgba(30,136,229,.18); text-decoration:none; }
+.cas-btn--ghost{
+  background:transparent;
+  border:1px solid var(--border);
+}
+.cas-btn--ghost:hover{ border-color:rgba(30,136,229,.45); }
+
+.cas-mini{ margin-top:12px; display:flex; flex-wrap:wrap; gap:10px; color:var(--muted); font-size:12px; }
+.cas-mini__item span{ color:var(--text); font-weight:900; }
+
+.cas-panel{
+  border:1px solid var(--border);
+  background:var(--bg);
+  padding:12px 14px;
+}
+.cas-panel__title{ font-weight:950; margin-bottom:8px; }
+.cas-ol{ margin:0; padding-left:18px; }
+.cas-note{ margin-top:10px; color:var(--muted); font-size:12px; }
+
+.cas-section{ margin-top:18px; }
+
+.cas-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:12px;
+}
+.cas-card{
+  display:block;
+  border:1px solid var(--border);
+  background:var(--bg);
+  padding:12px 14px;
+  color:var(--text);
+}
+.cas-card:hover{
+  border-color:rgba(30,136,229,.45);
+  background:rgba(30,136,229,.06);
+  text-decoration:none;
+}
+.cas-card__h{ font-weight:950; margin-bottom:6px; }
+.cas-card__p{ margin:0; color:var(--muted); font-size:12px; }
+
+.cas-callout{
+  border:1px solid var(--border);
+  background:var(--bg);
+  padding:12px 14px;
+}
+.cas-muted{ color:var(--muted); font-size:12px; margin:8px 0 0; }
+.cas-ul{ margin:0; padding-left:18px; }
+
+@media (max-width: 900px){
+  .cas-hero{ flex-direction:column; }
+  .cas-grid{ grid-template-columns: 1fr; }
+}
+
+hr{
+  border:0;
+  height:2px;               /* เพิ่มความหนา */
+  background:#020e27;       /* สีเข้มขึ้น */
+}
+body.dark hr{
+  background:#72a4ff;
+}
+
+
+/* =========================
+   CAS Lab page (cas_lab.php)
+   ========================= */
+.cas-lab .cas-sub{ color: var(--muted); margin-top:6px; }
+.cas-hr{ background: var(--border); height:1px; border:0; margin:16px 0; }
+
+.cas-grid-2{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 980px){
+  .cas-grid-2{ grid-template-columns: 1fr; }
+}
+
+.cas-box{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;            /* โค้งน้อยมาก */
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+.cas-tag{
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.cas-form{ margin-top: 10px; }
+.cas-label{ display:block; font-weight:800; margin-bottom: 6px; }
+
+.cas-row{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+}
+.cas-input{
+  flex:1;
+  min-width: 180px;
+  border:1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 6px;            /* โค้งน้อย */
+  padding: 8px 10px;
+}
+.cas-btn{
+  border:1px solid rgba(30,136,229,.55);
+  background: rgba(30,136,229,.10);
+  color: var(--text);
+  font-weight: 900;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor:pointer;
+}
+.cas-btn:hover{
+  background: rgba(30,136,229,.18);
+}
+
+/* Learning panel */
+.cas-learn{
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.cas-learn__title{
+  font-weight: 950;
+  letter-spacing: .2px;
+  margin-bottom: 4px;
+}
+.cas-learn__flow{
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+/* 3-column cards inside learn */
+.cas-learn__cols{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 980px){
+  .cas-learn__cols{ grid-template-columns: 1fr; }
+}
+
+.cas-card{
+  background: var(--bg);
+  border:1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+}
+.cas-card__h{
+  font-weight: 950;
+  margin-bottom: 6px;
+}
+
+.cas-ul{ margin: 0; padding-left: 18px; }
+.cas-ul li{ margin: 6px 0; }
+
+/* Result + spacing */
+.cas-spacer{ height: 14px; } /* เว้น 1 บรรทัดแบบชัด ๆ */
+.cas-result{
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+/* Alerts */
+.cas-alert{ padding:10px 12px; border-radius:6px; border:1px solid var(--border); }
+.cas-alert--ok{ background: rgba(34,197,94,.12); border-color: rgba(34,197,94,.35); }
+.cas-alert--warn{ background: rgba(245,158,11,.12); border-color: rgba(245,158,11,.35); }
+.cas-alert--bad{ background: rgba(239,68,68,.12); border-color: rgba(239,68,68,.35); }
+
+.cas-muted{ color: var(--muted); }
+.mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+/* Table */
+.cas-table-wrap{ overflow:auto; border:1px solid var(--border); border-radius: 6px; }
+.cas-table{
+  width:100%;
+  border-collapse: collapse;
+  background: var(--bg);
+}
+.cas-table th, .cas-table td{
+  padding: 10px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align:left;
+  vertical-align: top;
+}
+.cas-table th{
+  background: var(--surface);
+  font-weight: 950;
+}
+.sev{
+  display:inline-block;
+  padding: 2px 8px;
+  border:1px solid var(--border);
+  border-radius: 6px;
+  font-weight: 900;
+  font-size: 12px;
+}
+.sev--info{ background: rgba(96,165,250,.12); border-color: rgba(96,165,250,.35); }
+.sev--warn{ background: rgba(245,158,11,.12); border-color: rgba(245,158,11,.35); }
+.sev--error, .sev--critical{ background: rgba(239,68,68,.12); border-color: rgba(239,68,68,.35); }

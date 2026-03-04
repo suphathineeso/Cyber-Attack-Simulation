@@ -1,0 +1,110 @@
+/* Cyber Attack Simulation - login.css (Blue/White + Dark mode) */
+:root{
+  --bg:#ffffff;
+  --surface:#f5f8ff;
+  --text:#0b1220;
+  --muted:#5b6475;
+
+  --primary:#1e88e5;
+  --border:#d8e2f0;
+  --shadow:0 14px 40px rgba(11,18,32,.12);
+
+  --radius:16px;
+}
+
+body.dark{
+  --bg:#0b1220;
+  --surface:#121a2b;
+  --text:#eaf1ff;
+  --muted:#a9b4c7;
+
+  --primary:#60a5fa;
+  --border:#26324a;
+  --shadow:0 14px 40px rgba(0,0,0,.45);
+}
+
+body{
+  background:var(--bg);
+  color:var(--muted);
+  font:13px/18px Arial, Helvetica, sans-serif;
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+#wrapper{width:min(980px,92vw);text-align:center;margin:0 auto;}
+#content{
+  display:inline-block;
+  padding:22px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+h1,h2,h3{color:var(--text);margin:0 0 12px 0;}
+
+label{
+  float:left;
+  text-align:right;
+  margin-right:.5em;
+  display:block;
+  overflow:hidden;
+  padding-right:16px;
+  width:110px;
+  font-weight:700;
+  color:var(--text);
+}
+
+fieldset{
+  width:380px;
+  padding:10px 18px 6px 18px;
+  overflow:hidden;
+  border-style:none;
+  text-align:left;
+}
+
+.loginInput{
+  float:left;
+  width:320px;
+  color:var(--text);
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:8px 10px;
+  margin-bottom:12px;
+  outline:none;
+}
+.loginInput:focus{
+  border-color:rgba(30,136,229,.60);
+  box-shadow:0 0 0 3px rgba(30,136,229,.18);
+}
+
+a{color:var(--primary);text-decoration:none;font-weight:700;}
+a:hover{text-decoration:underline;}
+
+input[type="submit"],button{
+  background:var(--primary);
+  color:#fff;
+  border:0;
+  padding:9px 12px;
+  border-radius:12px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+#footer{
+  position:fixed;
+  width:100%;
+  height:50px;
+  bottom:0;
+  left:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  pointer-events:none;
+}

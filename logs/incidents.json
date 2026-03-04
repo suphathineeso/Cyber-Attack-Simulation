@@ -1,0 +1,224 @@
+[
+    {
+        "id": "INC-20260303-3edcb5",
+        "created_ts": "2026-03-03T08:37:44+00:00",
+        "title": "Ransomware Simulation Alert",
+        "severity": "high",
+        "status": "new",
+        "triggers": [
+            "SIM_RANSOMWARE \/ Ransomware simulated (no encryption)",
+            "SIM_RANSOMWARE \/ Ransomware simulated (no encryption)",
+            "SIM_RANSOMWARE \/ Ransomware simulated (no encryption)",
+            "SIM_RANSOMWARE \/ Ransomware simulated (no encryption)",
+            "SIM_RANSOMWARE \/ Ransomware simulated (no encryption)",
+            "SIM_RANSOMWARE \/ Ransomware simulated (no encryption)",
+            "SIM_RANSOMWARE \/ Ransomware simulated (no encryption)",
+            "SIM_RANSOMWARE \/ Ransomware simulated (no encryption)",
+            "SIM_RANSOMWARE \/ Ransomware simulated (no encryption)",
+            "SIM_RANSOMWARE \/ Ransomware simulated (no encryption)",
+            "SIM_RANSOMWARE \/ Ransomware simulated (no encryption)",
+            "SIM_SEARCH \/ Suspicious search simulated",
+            "SIM_SEARCH \/ Suspicious search simulated",
+            "SIM_SEARCH \/ Suspicious search simulated",
+            "SIM_SEARCH \/ Suspicious search simulated",
+            "SIM_SEARCH \/ Suspicious search simulated",
+            "SIM_SEARCH \/ Suspicious search simulated",
+            "SIM_SEARCH \/ Suspicious search simulated",
+            "SIM_SEARCH \/ Suspicious search simulated",
+            "SIM_RANSOMWARE detected via simlab",
+            "SIM_SEARCH detected via simlab",
+            "SIM_SEARCH detected via simlab",
+            "SIM_SEARCH detected via simlab",
+            "SIM_SEARCH detected via simlab",
+            "SIM_SEARCH detected via simlab",
+            "SIM_SEARCH detected via simlab",
+            "SIM_SEARCH detected via simlab",
+            "SIM_SEARCH detected via simlab",
+            "SIM_SEARCH detected via simlab"
+        ],
+        "events": [
+            {
+                "ts": "2026-03-03T08:37:40+00:00",
+                "type": "SIM_RANSOMWARE",
+                "module": "simlab",
+                "severity": "high"
+            },
+            {
+                "ts": "2026-03-03T08:37:40+00:00",
+                "type": "SIM_RANSOMWARE",
+                "module": "simlab",
+                "severity": "high"
+            },
+            {
+                "ts": "2026-03-03T08:37:40+00:00",
+                "type": "SIM_RANSOMWARE",
+                "module": "simlab",
+                "severity": "high"
+            },
+            {
+                "ts": "2026-03-03T08:37:40+00:00",
+                "type": "SIM_RANSOMWARE",
+                "module": "simlab",
+                "severity": "high"
+            },
+            {
+                "ts": "2026-03-03T08:37:40+00:00",
+                "type": "SIM_RANSOMWARE",
+                "module": "simlab",
+                "severity": "high"
+            },
+            {
+                "ts": "2026-03-03T08:37:40+00:00",
+                "type": "SIM_RANSOMWARE",
+                "module": "simlab",
+                "severity": "high"
+            },
+            {
+                "ts": "2026-03-03T08:37:40+00:00",
+                "type": "SIM_RANSOMWARE",
+                "module": "simlab",
+                "severity": "high"
+            },
+            {
+                "ts": "2026-03-03T08:37:40+00:00",
+                "type": "SIM_RANSOMWARE",
+                "module": "simlab",
+                "severity": "high"
+            },
+            {
+                "ts": "2026-03-03T08:37:40+00:00",
+                "type": "SIM_RANSOMWARE",
+                "module": "simlab",
+                "severity": "high"
+            },
+            {
+                "ts": "2026-03-03T08:37:40+00:00",
+                "type": "SIM_RANSOMWARE",
+                "module": "simlab",
+                "severity": "high"
+            },
+            {
+                "ts": "2026-03-03T08:37:40+00:00",
+                "type": "SIM_RANSOMWARE",
+                "module": "simlab",
+                "severity": "high"
+            },
+            {
+                "ts": "2026-03-03T09:14:53+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T09:14:53+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T09:14:53+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T09:14:53+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T09:14:53+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T09:14:53+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T09:14:53+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T09:14:53+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T10:38:09+00:00",
+                "type": "SIM_RANSOMWARE",
+                "module": "simlab",
+                "severity": "high"
+            },
+            {
+                "ts": "2026-03-03T10:38:43+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T10:38:43+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T10:38:43+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T10:38:43+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T10:38:43+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T10:38:43+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T10:38:43+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T10:38:43+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            },
+            {
+                "ts": "2026-03-03T10:38:43+00:00",
+                "type": "SIM_SEARCH",
+                "module": "simlab",
+                "severity": "warn"
+            }
+        ],
+        "playbook": {
+            "identify": false,
+            "contain": false,
+            "eradicate": false,
+            "recover": false,
+            "lessons": false
+        },
+        "notes": []
+    }
+]
