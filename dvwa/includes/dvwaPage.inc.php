@@ -526,7 +526,7 @@ function dvwaHtmlEcho( $pPage ) {
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'encryption', 'name' => 'Cryptography', 'url' => 'vulnerabilities/cryptography/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'api', 'name' => 'API', 'url' => 'vulnerabilities/api/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array('id' => 'idor','name' => 'IDOR','url' => 'vulnerabilities/idor/');
-		$menuBlocks['vulnerabilities'][] = array('id' => 'openredirect','name' => 'Open Redirect','url' => 'vulnerabilities/openredirect/'); //ยังไม่ได้แก้
+		//$menuBlocks['vulnerabilities'][] = array('id' => 'openredirect','name' => 'Open Redirect','url' => 'vulnerabilities/openredirect/'); //ยังไม่ได้แก้
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'simlab', 'name' => 'Simulation', 'url' => 'vulnerabilities/simlab/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'ir', 'name' => 'Incident Timeline', 'url' => 'vulnerabilities/ir/' );
 		
