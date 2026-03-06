@@ -52,7 +52,7 @@ generateSessionToken();
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>DVWA Security <img src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/images/lock.png\" /></h1>
+	<h1>Cyber Attack Simulation Security <img src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/images/lock.png\" /></h1>
 	<br />
 
 	<h2>Security Level</h2>

@@ -2,9 +2,9 @@
 In case I get round to adding MS SQL support, this creates and populates the tables.
 */
 
-CREATE DATABASE dvwa;
+CREATE DATABASE cyber_attack_simulation;
 
-USE dvwa;
+USE cyber_attack_simulation;
 
 CREATE TABLE users (user_id INT PRIMARY KEY,first_name VARCHAR(15),last_name VARCHAR(15), [user] VARCHAR(15), password VARCHAR(32),avatar VARCHAR(70), last_login DATETIME, failed_login INT);
 
