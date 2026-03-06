@@ -1,7 +1,8 @@
 <?php
 
-$headerCSP = "Content-Security-Policy: script-src 'self';";
+//$headerCSP = "Content-Security-Policy: script-src 'self';"; header($headerCSP);
 
+$headerCSP = "Content-Security-Policy: script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;";
 header($headerCSP);
 
 ?>

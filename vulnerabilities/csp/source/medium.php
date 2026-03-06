@@ -1,7 +1,7 @@
 <?php
 
-$headerCSP = "Content-Security-Policy: script-src 'self' 'unsafe-inline' 'nonce-TmV2ZXIgZ29pbmcgdG8gZ2l2ZSB5b3UgdXA=';";
-
+//$headerCSP = "Content-Security-Policy: script-src 'self';"; header($headerCSP);
+$headerCSP = "Content-Security-Policy: script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;";
 header($headerCSP);
 
 // Disable XSS protections so that inline alert boxes will work
